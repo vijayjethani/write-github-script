@@ -6,10 +6,10 @@ jobs:
   pullrequest:
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/github-script@v0.8.0
+     - uses: actions/github-script@v6
        with:
          script: |
-           github.rest.pull.create({
+           github.pull.create({
              repo: github.context.repo.repo,
              owner: github.context.repo.owner,
              head: github.context.ref,
