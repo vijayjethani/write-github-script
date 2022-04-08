@@ -17,3 +17,4 @@ jobs:
            base: "main"
            title: "New pull create based on issue"
            body: "review pull request for changes "
+           })
