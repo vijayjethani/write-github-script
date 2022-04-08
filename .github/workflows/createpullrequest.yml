@@ -1,7 +1,6 @@
 name: Github Script
-on:
-  issues:
-    types: [opened]
+on: [push]
+  
     
 jobs:
   pullrequest:
@@ -11,10 +10,10 @@ jobs:
        with:
          script: |
            github.rest.pull.create({
-           repo: github.context.repo.repo,
-           owner: github.context.repo.owner,
-           head: github.context.ref,
-           base: "main"
-           title: "New pull create based on issue"
-           body: "review pull request for changes "
+             repo: github.context.repo.repo,
+             owner: github.context.repo.owner,
+             head: github.context.ref,
+             base: "main",
+             title: "New pull create based on issue",
+             body: "review pull request for changes "
            })
