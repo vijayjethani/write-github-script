@@ -10,7 +10,7 @@ jobs:
        with:
          github-token: ${{secrets.GITHUB_TOKEN}}
          script: |
-           github.pull.create({
+           github.rest.pull.create({
              repo: github.context.repo.repo,
              owner: github.context.repo.owner,
              head: github.context.ref,
