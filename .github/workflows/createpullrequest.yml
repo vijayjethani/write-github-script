@@ -8,7 +8,7 @@ jobs:
     steps:
      - uses: actions/github-script@v6
        with:
-         github-token: ${{secret.GITHUB_TOKEN}}
+         github-token: ${{secrets.GITHUB_TOKEN}}
          script: |
            github.pull.create({
              repo: github.context.repo.repo,
