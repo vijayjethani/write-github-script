@@ -1,0 +1,20 @@
+name: Github Script
+on: [push]
+  
+    
+jobs:
+  pullrequest:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/github-script@0.8.0
+       with:
+         github-token: ${{secrets.GITHUB_TOKEN}}
+         script: |
+           github.pull.create({
+             repo: github.context.repo.repo,
+             owner: github.context.repo.owner,
+             head: github.context.ref,
+             base: "main",
+             title: "from my action",
+             body: "## I totally used GitHub Script to pull this off 🔥"
+           })
